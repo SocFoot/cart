@@ -4,14 +4,32 @@ lock '3.4.0'
 set :application, 'depot'
 set :repo_url, 'git@github.com:SocFoot/depot.git'
 
+# Default deploy_to directory is /var/www/my_app_name
+set :deploy_to, '/home/cedric/Documents/www'
+
+# Default value for :scm is :git
+ set :scm, :git
+set :user, "cedric"
+# Default value for :format is :pretty
+ set :format, :pretty
+role :web, "cedric@depot.com"
+
+set :ssh_options, {:forward_agent => true}
+
+# Default value for :log_level is :debug
+# set :log_level, :debug
+
+# Default value for :pty is false
+ set :pty, true
+ 
 # Default branch is :master
 # ask :branch, `git rev-parse --abbrev-ref HEAD`.chomp
 
 # Default deploy_to directory is /var/www/my_app_name
- set :deploy_to, 'home/cedric/Documents/www'
+# set :deploy_to, '/var/www/my_app_name'
 
 # Default value for :scm is :git
- set :scm, :git
+# set :scm, :git
 
 # Default value for :format is :pretty
 # set :format, :pretty
@@ -20,15 +38,7 @@ set :repo_url, 'git@github.com:SocFoot/depot.git'
 # set :log_level, :debug
 
 # Default value for :pty is false
- set :pty, true
- 
- set :rails_env, "production"
- set :stage, :production
- set :deploy_via, :remote_cache
- set :use_sudo, false
- set :ssh_options, { :forward_agent => true, :port => 22 }
-
-
+# set :pty, true
 
 # Default value for :linked_files is []
 # set :linked_files, fetch(:linked_files, []).push('config/database.yml', 'config/secrets.yml')
@@ -40,7 +50,7 @@ set :repo_url, 'git@github.com:SocFoot/depot.git'
 # set :default_env, { path: "/opt/ruby/bin:$PATH" }
 
 # Default value for keep_releases is 5
- set :keep_releases, 5
+# set :keep_releases, 5
 
 namespace :deploy do
 
@@ -54,4 +64,3 @@ namespace :deploy do
   end
 
 end
-
