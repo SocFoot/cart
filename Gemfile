@@ -47,6 +47,11 @@ group :development, :test do
   gem 'web-console', '~> 2.0'
 end
 
+group :development do
+  gem 'capistrano-rails'
+  gem 'capistrano-rbenv', '~> 2.0', require: false
+end
+
 
 group :production do
   gem 'mysql2', '~> 0.3.18'
