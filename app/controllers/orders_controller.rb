@@ -23,6 +23,7 @@ class OrdersController < ApplicationController
     end
     
     @order = Order.new
+    @pay_types = PayType.all.map{ |a| a.name}
   end
 
   # GET /orders/1/edit
